@@ -1,36 +1,42 @@
 """
-Crie um programa que faca a conversao de Fahrenheit para Celsius e  vice-cersa
+Faça um programa que leia 2 notas de um aluno, verifique se as nostas são validas e exiba na tela a media destas notas.
+Uma nota valida de ser, obrigatoriamente, um valor entre 0.0 e 10.0, onde caso a nota não possua um valor valido, este 
+fato deve ser informado ao usuario e o programa termina
 """
 
-def menu_inicial():
-    print('Programa para Conversão de Temperaturas')
-    print('1. Converter de Celsius para Fahrenheit')
-    print('2. Converter de Fahrenheit para Celsius')
+nota_1 = float(input('Digite a nota: '))
+nota_2 = float(input('Digite a segunda nota: '))
 
-def cel_fahr():
-    C = float(input('Entre com a temperatura em graus Celsius: '))
-    F = C * (9 / 5) + 32
-    print('Valor em Fahrenheit: {0}°F'.format(F))
+def menu_notas():
+    print('Qual a faixa de pontuação? ')
+    print('1. De 1 a 10')
+    print('2. Zero ')
 
-def fahr_cel():
-    F = float(input('Entre com a temperatura em graus Fahrenheit: '))
-    C = (F - 32) * (5 / 9)
-    print('Valor em Celsius: {0}°C'.format(C))
+def nota_valida():
+    if nota_1 and nota_2 <=10:
+        print('Nota valida')
+
+def nota_invalida():
+    if nota_1 or nota_2 <=0:
+        print('Não é possivel fazer a recuperação')
+
+def media():
+    pontuacao = (nota_1 + nota_2) / 2
+    print(f'A media é', pontuacao)
 
 if __name__=='__main__':
-    menu_inicial()
-    escolha = input('Escolha o tipo de conversão que deseja realizar: ')
+    menu_notas()
+    escolha = input('Escolha a nota: ')
 
     if escolha == '1':
-        cel_fahr()
+        media()
 
-    if escolha == '2':
-        fahr_cel()
+    if  escolha == '2':
+        nota_invalida()  
 
-"""
-Neste código criamos duas funções distintas de conversão: cel_fahr() e fahr_cel(), que realizam as conversões de celsius para fahrenheit e de fahrenheit para celsius,
-respectivamente. Também criamos um menu de opções para que o usuário possa escolher o tipo de conversão desejada. Usamos a função input() para capturar o valor digitado
-pelo usuário, e o convertemos para o tipo float antes de armazená-lo em uma variável de cálculo.
 
-No programa principal simplesmente executamos o menu e chamamos a função escolhida pelo usuário.
-"""
+    
+
+
+
+
