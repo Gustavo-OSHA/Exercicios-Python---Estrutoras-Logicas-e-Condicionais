@@ -6,6 +6,10 @@ anteriormente obedece tais pesos: Trabalho de Laboratorio: 2; Avaliação Semest
 Faça todas as verificações necessarias
 """
 
+"""
+Ainda com erros em relação ao calculo 
+"""
+
 
 trabalho = float(input('Informe a nota do Trabalho: '))
 avaliacao = float(input('Informe a nota da Avaliação: '))
